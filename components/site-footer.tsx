@@ -1,5 +1,6 @@
-import { Leaf, Phone, Mail, MapPin, Star } from 'lucide-react'
+import { Phone, Mail, MapPin, Star } from 'lucide-react'
 import { navLinks, serviceAreas, site } from '@/lib/site'
+import { BrandLogo } from '@/components/brand-logo'
 
 export function SiteFooter() {
   return (
@@ -9,7 +10,7 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center gap-2.5">
               <span className="flex h-9 w-9 items-center justify-center rounded-md bg-accent text-accent-foreground">
-                <Leaf className="h-5 w-5" aria-hidden="true" />
+                <BrandLogo className="h-6 w-6" />
               </span>
               <span className="font-serif text-lg font-semibold">
                 GM Landscapes
@@ -98,7 +99,6 @@ export function SiteFooter() {
             &copy; {new Date().getFullYear()} GM Landscapes. All rights
             reserved.
           </p>
-          <p>Site by [Your Agency]</p>
         </div>
       </div>
     </footer>

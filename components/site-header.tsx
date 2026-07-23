@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Phone, Menu, X, Leaf } from 'lucide-react'
+import { Phone, Menu, X } from 'lucide-react'
 import { navLinks, site } from '@/lib/site'
+import { BrandLogo } from '@/components/brand-logo'
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
@@ -32,7 +33,7 @@ export function SiteHeader() {
           aria-label="GM Landscapes home"
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-md bg-accent text-accent-foreground">
-            <Leaf className="h-5 w-5" aria-hidden="true" />
+            <BrandLogo className="h-6 w-6" />
           </span>
           <span className="font-serif text-lg font-semibold leading-none tracking-tight">
             GM Landscapes
