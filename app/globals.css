@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sage: var(--sage);
+  --color-timber: var(--timber);
+  --color-cream: var(--cream);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.5rem;
+
+  /* Warm off-white / cream base */
+  --background: oklch(0.98 0.006 95);
+  --foreground: oklch(0.27 0.024 220);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.27 0.024 220);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.27 0.024 220);
+
+  /* Dark teal / charcoal brand */
+  --primary: oklch(0.31 0.032 218);
+  --primary-foreground: oklch(0.98 0.006 95);
+
+  /* Sage / dusty blue */
+  --secondary: oklch(0.82 0.028 190);
+  --secondary-foreground: oklch(0.29 0.03 218);
+
+  --muted: oklch(0.95 0.008 95);
+  --muted-foreground: oklch(0.5 0.018 220);
+
+  /* Warm timber accent */
+  --accent: oklch(0.63 0.083 62);
+  --accent-foreground: oklch(0.99 0.005 95);
+
+  --destructive: oklch(0.58 0.22 27);
+
+  --border: oklch(0.9 0.01 100);
+  --input: oklch(0.9 0.01 100);
+  --ring: oklch(0.63 0.083 62);
+
+  /* Named brand tokens */
+  --sage: oklch(0.74 0.035 185);
+  --timber: oklch(0.63 0.083 62);
+  --cream: oklch(0.98 0.006 95);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
