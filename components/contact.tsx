@@ -25,8 +25,18 @@ export function Contact() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSubmitted(true)
+    
+    const formData = new FormData(e.currentTarget)
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+    .then(() => setSubmitted(true))
+    .catch((error) => alert(error))
   }
+
 
   return (
     <section id="contact" className="scroll-mt-20 bg-background py-20 lg:py-28">
@@ -120,10 +130,15 @@ export function Contact() {
               </p>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"
-            >
+           <form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  onSubmit={handleSubmit}
+  className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"
+>
+  <input type="hidden" name="form-name" value="contact" />
+
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="sm:col-span-1">
                   <label
