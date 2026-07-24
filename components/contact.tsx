@@ -28,7 +28,7 @@ export function Contact() {
     
     const formData = new FormData(e.currentTarget)
     
-    fetch("/", {
+   fetch("/netlify-form-placeholder.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData as any).toString(),
