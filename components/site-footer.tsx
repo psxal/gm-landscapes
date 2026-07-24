@@ -8,12 +8,8 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-md bg-accent text-accent-foreground">
-                <Leaf className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span className="font-serif text-lg font-semibold">
-                GM Landscapes
-              </span>
+<img src="/placeholder-logo.png" alt="GM Landscapes Logo" className="h-10 w-auto object-contain" />
+
             </div>
             <p className="mt-4 text-pretty text-sm leading-relaxed text-primary-foreground/70">
               Specialist landscape gardening — decking, patios, fencing, turfing
