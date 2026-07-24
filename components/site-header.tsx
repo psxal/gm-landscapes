@@ -31,12 +31,8 @@ export function SiteHeader() {
           }`}
           aria-label="GM Landscapes home"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-accent text-accent-foreground">
-            <Leaf className="h-5 w-5" aria-hidden="true" />
-          </span>
-          <span className="font-serif text-lg font-semibold leading-none tracking-tight">
-            GM Landscapes
-          </span>
+<img src="/placeholder-logo.png" alt="GM Landscapes Logo" className="h-10 w-auto object-contain" />
+          
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
