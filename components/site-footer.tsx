@@ -98,7 +98,6 @@ export function SiteFooter() {
             &copy; {new Date().getFullYear()} GM Landscapes. All rights
             reserved.
           </p>
-          <p>Site by [Your Agency]</p>
         </div>
       </div>
     </footer>
